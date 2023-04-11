@@ -1,0 +1,36 @@
+#pieces{
+    width: 300px;
+    background-color: aquamarine;
+    .piece{
+        width: 300px;
+        img{
+            width: 100%;
+        }
+    }
+}
+.cards{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .card{
+        width: 300px;
+        background-color: black;
+        height: 350px;
+        padding: 20px;
+        .dropzone{
+            width: 100%;
+            height: 90%;
+            background-color: aqua;
+            &.highlight{
+                background-color: greenyellow;
+            }
+            .piece{
+                width: 100%;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

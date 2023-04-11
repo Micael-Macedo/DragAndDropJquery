@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div class="buildPc">
+        <div id="listProduct">
+            <select name="" id="selectPiece">
+                <option value="" select></option>
+                <option value="motherboard">Placa mãe</option>
+                <option value="power-supplies">Fonte</option>
+                <option value="processors">Processadores</option>
+                <option value="graphiccard">Placa de Video</option>
+                <option value="rammemory">Memoria ram</option>
+                <option value="storagedevices">Armazenamento</option>
+            </select>
+            <div id="pieces">
+            </div>
+        </div>
+        <div id="pcPieces">
+            <div class="cards">
+                <div class="card">
+                    <button onclick="remover(this)">Remover</button>
+                    <div class="dropzone" id="motherboard">
+                    </div>
+                </div>
+                <div class="card">
+                    <button onclick="remover(this)">Remover</button>
+                    <div class="dropzone" id="power-supplies"></div>
+                </div>
+                <div class="card">
+                    <button onclick="remover(this)">Remover</button>
+                    <div class="dropzone" id="processors"></div>
+                </div>
+                <div class="card">
+                    <button onclick="remover(this)">Remover</button>
+                    <div class="dropzone" id="graphiccard"></div>
+                </div>
+                <div class="card">
+                    <button onclick="remover(this)">Remover</button>
+                    <div class="dropzone" id="rammemory"></div>
+                </div>
+                <div class="card">
+                    <button onclick="remover(this)">Remover</button>
+                    <div class="dropzone" id="storagedevices"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
