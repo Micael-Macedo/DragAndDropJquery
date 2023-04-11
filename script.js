@@ -3,6 +3,8 @@ $("#selectPiece").on('change', function () {
     getPieces(piece);
 });
 let produtos = document.querySelectorAll(".piece");
+select = document.getElementById("selectPiece").options;
+
 function getPieces(piece) { 
     $("#pieces").empty();
     $("#pieces").append(
@@ -29,6 +31,7 @@ function dragend(element){
     console.log("drag card end")
     element.classList.remove("is-dragging")   
     dropzone.classList.remove("highlight");
+    verificarComponentes()
 }
 function drag(){
     console.log("dragging")
@@ -46,7 +49,6 @@ function dragleave() {
     
 }
 function drop() {
-    
 }
 function dragenter() {
 
@@ -64,5 +66,19 @@ function dragover() {
 function remover(button) {
     let buttonCard = $(button).parent();
     let dropzone = $(buttonCard).find(".dropzone");
-
+}
+function verificarComponentes() {
+    motherboard = document.querySelector("#motherboard");
+    console.log(motherboard.firstElementChild)
+    powerSupplies = document.querySelector("#power-supplies");
+    console.log(powerSupplies.firstElementChild)
+    if(motherboard.firstElementChild != null && powerSupplies.firstElementChild != null){
+        console.log($("#selectPiece option"))
+        let select = $("#selectPiece option")
+        console.log(select.options);
+        $("#selectPiece option").forEach(option => {
+            $(option).removeAttr('disabled');
+        });
+    }
+    
 }
