@@ -8,11 +8,11 @@ function getPieces(piece) {
     $("#pieces").append(
         `<div class="piece" name="${piece}" draggable="true" ondragstart="dragstart(this)" ondrag="drag(this)" ondragend="dragend(this)">
         <img src="images/1.png" alt="">
-        <h2>${piece}</h2>
+        <h2>${piece}1</h2>
         </div>
         <div class="piece" name="${piece}" draggable="true" ondragstart="dragstart(this)" ondrag="drag(this)" ondragend="dragend(this)">
         <img src="images/1.png" alt="">
-        <h2>${piece}</h2>
+        <h2>${piece}2</h2>
         </div>`
         
     );
@@ -33,6 +33,7 @@ function dragend(element){
 function drag(){
     console.log("dragging")
 }
+listPieces = document.querySelector("#pieces")
 dropzones = document.querySelectorAll('.dropzone');
 dropzones.forEach(dropzone => {
     dropzone.addEventListener("dragover", dragover)
@@ -53,8 +54,11 @@ function dragenter() {
 function dragover() {
     let pieceBeingDrag = document.querySelector('.is-dragging')
     if(pieceBeingDrag.getAttribute("name") == this.id){
+        if(this.children){
+            $("#pieces").append(this.firstElementChild);
+            $(dropzone).empty();
+        }
         this.appendChild(pieceBeingDrag);
-        $(dropzone).empty();
     }
 }
 function remover(button) {
